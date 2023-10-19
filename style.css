@@ -1,0 +1,129 @@
+/*
+COLOR PALETTE
+black:#001732;
+orange: #f1754e;
+lightgreen #4ef1bb;
+bg color #d8eee8;
+bg dark color #cbe0dd;
+clicked-cell: #9dc5c7;
+*/
+
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Regole generiche*/
+body {
+    padding: 46px;
+    padding-top: 450px;
+    line-height: 1;
+    color: #001732;
+    background-color: rgb(216, 238, 232);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-container {
+    width: 884px;
+}
+
+/*Pannello di gioco*/
+h1 {
+    font-size: 80px;
+}
+
+.score {
+    font-size: 72px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Tabellone di gioco*/
+.game-board {
+    /* do una qualunque position per far si che faccia da rifermineto al figlio(end-game-screen) */
+    position: relative;
+    border: 2px solid #001732;
+}
+
+.grid {
+    height: 880px;
+    width: 880px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cell {
+    width: 88px;
+    height: 88px;
+    cursor: pointer;
+}
+
+.cell-dark {
+    background-color: #cbe0dd;
+}
+
+.cell:hover,
+.cell-clicked {
+    background-color: #9dc5c7;
+}
+
+.cell-bomb {
+    background-color: #f1754e;
+    background-image: url('/images/bomb.png');
+    background-size: contain;
+    /* contain in modo che rimanga all'interno del contenitore */
+}
+
+.cell-clicked,
+.cell-bomb {
+    cursor: not-allowed;
+}
+
+/* Schermata di fine gioco */
+.end-game-screen {
+    position: absolute;
+    /* toglie dal genitore il tsg figlio */
+    background-color: rgba(241, 117, 78, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.win {
+    background-color: rgba(78, 241, 187, 0.6);
+}
+
+.end-game-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 88px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+button {
+    border: 2px solid #001732;
+    font-size: 64px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    /* CURSOR: POINTER Fa apparire la manina come cursore del mouse*/
+}
+
+button:hover {
+    background-color: #cbe0dd;
+}
+
+.hidden {
+    display: none;
+}
